@@ -25,49 +25,116 @@
 </head>
 
 <body>
-  <nav>
-    <div class="nav-container">
-      <div class="logo">
-        <img src="./images/logo.svg" alt="logo-icon" />
+  <div class="container">
+    <nav>
+      <div class="nav-container">
+        <div class="logo">
+          <button class="menu"><img src="./images/icon-menu.svg" alt="hamburger"></button>
+          <img src="./images/logo.svg" alt="logo-icon" />
+        </div>
+        <ul c lass="nav-lists">
+          <a href="#">
+            <li>Collections</li>
+          </a>
+          <a href="#">
+            <li>Men</li>
+          </a>
+          <a href="#">
+            <li>Women</li>
+          </a>
+          <a href="#">
+            <li>About</li>
+          </a>
+          <a href="#">
+            <li>Contact</li>
+          </a>
+        </ul>
       </div>
-      <ul class="nav-lists">
-        <a href="#">
-          <li>Collections</li>
-        </a>
-        <a href="#">
-          <li>Men</li>
-        </a>
-        <a href="#">
-          <li>Women</li>
-        </a>
-        <a href="#">
-          <li>About</li>
-        </a>
-        <a href="#">
-          <li>Contact</li>
-        </a>
-      </ul>
-    </div>
 
-    <div class="cart-container">
-      <div class="cart-icon">
-        <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
-            fill-rule="nonzero" />
-        </svg>
-        <span class="item-count hidden" id="itemCount">0</span>
+      <div class="cart-container">
+        <div class="cart-icon">
+          <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
+              fill-rule="nonzero" />
+          </svg>
+          <span class="item-count hidden" id="itemCount">0</span>
+        </div>
+        <div class="avater-image">
+          <img src="./images/image-avatar.png" alt="image-avatar" />
+        </div>
       </div>
-      <div class="avater-image">
-        <img src="./images/image-avatar.png" alt="image-avatar" />
-      </div>
-    </div>
 
-    <div class="cart-item hidden"></div>
-  </nav>
+      <div class="cart-item hidden"></div>
+    </nav>
 
-  <main>
-    <section id="product-images">
+    <main>
+      <section id="product-images">
+        <div class="product-image">
+          <button class="prev"><img src="./images/icon-previous.svg" alt="icon-previous"></button>
+          <img src="./images/image-product-1.jpg" alt="image-product" class="main-image" />
+          <button class="next"><img src="./images/icon-next.svg" alt="icon-next"></button>
+        </div>
+
+        <div class="product-thumbnails">
+          <div class="img-container active">
+            <img src="./images/image-product-1-thumbnail.jpg" alt="image-thumbnail" class="img-thumbline" />
+          </div>
+          <div class="img-container">
+            <img src="./images/image-product-2-thumbnail.jpg" alt="image-thumbnail" class="img-thumbnail" />
+          </div>
+          <div class="img-container">
+            <img src="./images/image-product-3-thumbnail.jpg" alt="image-thumbnail" class="img-thumbnail" />
+          </div>
+          <div class="img-container">
+            <img src="./images/image-product-4-thumbnail.jpg" alt="image-thumbnail" class="img-thumbnail" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Product Details -->
+      <section class="product-details">
+        <p class="company-name">Sneaker Company</p>
+        <h2>Fall Limited Edition Sneakers</h2>
+        <p class="detail">
+          These low-profile sneakers are your perfect casual wear companion.
+          Featuring a durable rubber outer sole, they’ll withstand everything
+          the weather can offer.
+        </p>
+        <div class="prices">
+          <div class="new-price">
+            <p>$125.00</p>
+            <span class="discount">50%</span>
+          </div>
+          <p class="old-price">$250.00</p>
+        </div>
+
+        <div class="buttons">
+          <div class="numbers">
+            <button class="decrease">
+              <img src="./images/icon-minus.svg" alt="" />
+            </button>
+            <span class="count">0</span>
+            <button class="increase">
+              <img src="./images/icon-plus.svg" alt="" />
+            </button>
+          </div>
+          <button class="check-out">
+            <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
+                fill-rule="nonzero" />
+            </svg>
+            Add to cart
+          </button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="overlay-container hidden">
+    <div class="overlay">
+      <button><img src="./images/icon-close.svg" alt=""></button>
       <div class="product-image">
         <img src="./images/image-product-1.jpg" alt="image-product" />
       </div>
@@ -86,60 +153,38 @@
           <img src="./images/image-product-4-thumbnail.jpg" alt="image-thumbnail" class="img-thumbnail" />
         </div>
       </div>
-    </section>
+    </div>
+  </div>
 
-    <!-- Product Details -->
-    <section class="product-details">
-      <p class="company-name">Sneaker Company</p>
-      <h2>Fall Limited Edition Sneakers</h2>
-      <p class="detail">
-        These low-profile sneakers are your perfect casual wear companion.
-        Featuring a durable rubber outer sole, they’ll withstand everything
-        the weather can offer.
-      </p>
-      <div class="prices">
-        <div class="new-price">
-          <p>$125.00</p>
-          <span class="discount">50%</span>
-        </div>
-        <p class="old-price">$250.00</p>
-      </div>
-
-      <div class="buttons">
-        <button class="decrease">
-          <img src="./images/icon-minus.svg" alt="" />
-        </button>
-        <span class="count">0</span>
-        <button class="increase">
-          <img src="./images/icon-plus.svg" alt="" />
-        </button>
-        <button class="check-out">
-          <img src="./images/icon-cart.svg" alt="" cart-icon />
-          Add to cart
-        </button>
-      </div>
-    </section>
-  </main>
-
-  <!-- <nav>
-      <ul class="navbar">
-        <li><a href="#" class="nav-link">Collections</a></li>
-        <li><a href="#" class="nav-link">Men</a></li>
-        <li><a href="#" class="nav-link">Women</a></li>
-        <li><a href="#" class="nav-link">About</a></li>
-        <li><a href="#" class="nav-link">Contact</a></li>
-      </ul>
-    </nav> -->
-
-  <!-- <div class="cart-container">
-    
-  </div> -->
-
-  <div class="attribution">
+  <div class="menu-overlay show">
+    <button class="menu-toggle-btn"><svg width="14" height="15" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
+        fill="#69707D" fill-rule="evenodd" />
+    </svg></button>
+    <ul class="nav-lists">
+      <a href="#">
+        <li>Collections</li>
+      </a>
+      <a href="#">
+        <li>Men</li>
+      </a>
+      <a href="#">
+        <li>Women</li>
+      </a>
+      <a href="#">
+        <li>About</li>
+      </a>
+      <a href="#">
+        <li>Contact</li>
+      </a>
+    </ul>
+  </div>
+  <!-- <div class="attribution">
     Challenge by
     <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Your
       Name Here</a>.
-  </div>
+  </div> -->
   <script src="./main.js"></script>
 </body>
 

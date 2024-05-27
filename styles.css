@@ -71,9 +71,14 @@ body {
     display: flex;
     flex-direction: column;
     max-height: 100vh;
-    margin: 1em 10% 0;
     font-size: 1.6rem;
     font-family: var(--font);
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    margin: 1em 10% 0;
 }
 
 nav {
@@ -81,8 +86,8 @@ nav {
     justify-content: space-between;
     padding-bottom: 2em;
     border-bottom: solid 1px var(--Grayish-blue);
+    align-items: center;
 }
-
 
 .nav-container {
     display: flex;
@@ -92,6 +97,10 @@ nav {
 
 .logo {
     padding-right: 30px;
+}
+
+.menu {
+    display: none;
 }
 
 ul li {
@@ -187,8 +196,13 @@ main {
     display: flex;
 }
 
-.product-image img {
+.main-image {
     border-radius: 16px;
+}
+
+.prev,
+.next {
+    display: none;
 }
 
 .product-thumbnails {
@@ -245,14 +259,13 @@ h2 {
     text-transform: capitalize;
     font-size: 2.1em;
     font-weight: 700;
-    margin: 10px 0 20px; 
+    margin: 10px 0 20px;
     line-height: 1.2;
 }
 
 .detail {
     color: var(--Dark-grayish-blue);
     font-size: 0.8em;
-    font-weight: ;
 }
 
 .prices {
@@ -271,9 +284,8 @@ h2 {
 .new-price p {
     color: var(--Black);
     font-size: 1.5em;
-    
 }
- 
+
 .discount {
     color: var(--Orange);
     background-color: hsla(26, 84%, 52%, 0.324);
@@ -289,6 +301,208 @@ h2 {
     font-size: 0.8em;
     font-weight: 700;
 }
+
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.numbers {
+    display: flex;
+    width: 200px;
+    height: 40px;
+    align-items: center;
+    background-color: var(--Light-grayish-blue);
+    justify-content: space-between;
+    border-radius: 5px;
+    padding: 0 10px;
+    font-size: 0.8em;
+    font-weight: 700;
+}
+
+.numbers img {
+    width: 70%;
+}
+
+.numbers button {
+    border: none;
+    background: none;
+}
+
+.numbers button:hover {
+    cursor: pointer;
+}
+
+button.check-out {
+    width: 100%;
+    height: 40px;
+    color: var(--White);
+    background-color: var(--Orange);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    border-radius: 7px;
+    font-size: 0.8em;
+    font-weight: 700;
+    fill: var(--White);
+}
+
+button.check-out:hover {
+    cursor: pointer;
+    background-color: var(--Pale-orange);
+}
+
+/* overlay */
+
+.overlay-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-overlay);
+}
+
+.overlay {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.menu-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    background-color: var(--White);
+    transform: translateY(-100%);
+    transition: transform ease-in-out 1s;
+}
+
+.menu-toggle-btn {
+    border: none;
+}
+
+.menu-toggle-btn svg {
+    background-color: transparent;
+}
+
 .hidden {
     display: none;
+}
+
+.show {
+    transform: translate(0);
+}
+
+@media (max-width: 800px) {
+    body {
+        overflow: unset;
+    }
+
+    .logo {
+        display: flex;
+    }
+
+    ul {
+        display: none;
+    }
+
+    .menu {
+        margin-right: 20px;
+        display: block;
+        border: none;
+    }
+
+    .avater-image {
+        margin: unset;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .container {
+        margin: unset;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+        margin: 0 0 20px;
+        width: 100%;
+        gap: 2em;
+    }
+
+    nav {
+        border: none;
+        margin: 1em 20px 0;
+    }
+
+    .product-image {
+        position: relative;
+    }
+
+    .main-image {
+        border-radius: 0;
+    }
+
+    .next {
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        border: 1px solid transparent;
+        border-radius: 50%;
+        padding: 9px;
+        background: white;
+        margin: 0 10px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .prev {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        border: 1px solid transparent;
+        border-radius: 50%;
+        padding: 9px;
+        background: white;
+        margin: 0 10px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .prev img,
+    .next img {
+        width: 7px;
+    }
+
+    .product-thumbnails {
+        display: none;
+    }
+
+    .product-details {
+        margin: 0 10%;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .numbers {
+        width: 100%;
+    }
+
+    .menu-overlay ul {
+        display: flex;
+        flex-direction: column;
+    }
+
 }
