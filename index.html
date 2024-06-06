@@ -32,7 +32,7 @@
           <button class="menu"><img src="./images/icon-menu.svg" alt="hamburger"></button>
           <img src="./images/logo.svg" alt="logo-icon" />
         </div>
-        <ul c lass="nav-lists">
+        <ul class="nav-lists">
           <a href="#">
             <li>Collections</li>
           </a>
@@ -65,7 +65,23 @@
         </div>
       </div>
 
-      <div class="cart-item hidden"></div>
+      <div class="cart-item hidden">
+        <div class="title">cart</div>
+        <div class="items hidden">
+          <div class="item">
+            <img src="./images/image-product-1.jpg" alt="image-product">
+            <div class="item-details">
+              <p>fall limited edition sneakers</p>
+              <p class="price">$125 x <span class="nos-of-item">1</span><span class="total"> $125.00</span> </p>
+            </div>
+            <img src="./images/icon-delete.svg" alt="bin icon" class="bin">
+          </div>
+          <button >
+            Checkout
+          </button>
+        </div>
+        <span class="empty">Your cart is empty.</span>
+      </div>
     </nav>
 
     <main>
@@ -156,26 +172,17 @@
     </div>
   </div>
 
-  <div class="menu-overlay show">
-    <button class="menu-toggle-btn"><svg width="14" height="15" xmlns="http://www.w3.org/2000/svg">
+  <div class="menu-overlay">
+    <button class="close-btn"><svg width="14" height="15" xmlns="http://www.w3.org/2000/svg">
       <path
         d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
         fill="#69707D" fill-rule="evenodd" />
     </svg></button>
     <ul class="nav-lists">
-      <a href="#">
         <li>Collections</li>
-      </a>
-      <a href="#">
         <li>Men</li>
-      </a>
-      <a href="#">
         <li>Women</li>
-      </a>
-      <a href="#">
         <li>About</li>
-      </a>
-      <a href="#">
         <li>Contact</li>
       </a>
     </ul>

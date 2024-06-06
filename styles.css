@@ -78,7 +78,8 @@ body {
 }
 
 .container {
-    margin: 1em 10% 0;
+    position: relative;
+    margin: 1em 10% 70px;
 }
 
 nav {
@@ -96,31 +97,34 @@ nav {
 }
 
 .logo {
-    padding-right: 30px;
+    padding-right: 50px;
 }
 
 .menu {
     display: none;
 }
 
+.nav-lists {
+    display: flex;
+    gap: 0 2em;
+}
+
 ul li {
     position: relative;
-    display: inline;
-    padding: 0 1em;
     color: var(--Grayish-blue);
     font-weight: 400;
+    font-size: 1.3rem;
 }
 
 ul li::after {
     content: '';
     position: absolute;
     left: 0;
-    bottom: -3.2em;
+    bottom: -3.35em;
     width: 0;
-    height: 3px;
+    height: 2px;
     background-color: var(--Orange);
     transition: width 0.3s;
-
 }
 
 li:hover,
@@ -129,7 +133,7 @@ li:active {
     cursor: pointer;
 }
 
-li:hover::after {
+.nav-container li:hover::after {
     width: 100%;
 }
 
@@ -151,6 +155,74 @@ li:hover::after {
 .cart-icon svg:active {
     fill: var(--Black);
     cursor: pointer;
+}
+
+/* cart Overlay */
+.cart-item {
+    position: absolute;
+    right: -50px;
+    top: 60px;
+    height: max-content;
+    width: 25%;
+    background-color: white;
+    box-shadow: 0px 9px 16px 3px var(--Grayish-blue);
+    border-radius: 10px;
+    font-size: 1.3rem;
+    text-transform: capitalize;
+    color: var(--Dark-grayish-blue);
+    z-index: 100;
+}
+
+.items {
+    padding: 20px 20px;
+}
+
+.title {
+    border-bottom: 1px solid var(--Dark-grayish-blue);
+    padding: 10px 10px 20px;
+    color: var(--Black);
+    font-weight: 700;
+}
+
+.cart-item img {
+    width: 10%;
+    border-radius: 5px;
+}
+
+.cart-item .bin {
+    width: 10px;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.empty {
+    display: block;
+    text-align: center;
+    padding: 50px 0;
+    font-weight: 700;
+    text-transform: unset;
+}
+
+.total {
+    color: var(--Black);
+    font-weight: 700;
+}
+
+.cart-item button {
+    width: 100%;
+    height: 40px;
+    color: var(--White);
+    background-color: var(--Orange);
+    border: none;
+    text-align: center;
+    border-radius: 7px;
+    font-size: 0.8em;
+    font-weight: 700;
+    margin-top: 15px;
+    letter-spacing: 0.7px;
 }
 
 .item-count {
@@ -378,19 +450,23 @@ button.check-out:hover {
     position: absolute;
     top: 0;
     left: 0;
+    bottom: 0;
     height: 100%;
     width: 50%;
+    padding: 20px 20px;
     background-color: var(--White);
     transform: translateY(-100%);
     transition: transform ease-in-out 1s;
 }
 
-.menu-toggle-btn {
-    border: none;
+
+.menu-overlay .nav-lists li {
+    color: var(--Black);
+    font-weight: 700;
 }
 
-.menu-toggle-btn svg {
-    background-color: transparent;
+.close-btn {
+    border: none;
 }
 
 .hidden {
@@ -401,6 +477,7 @@ button.check-out:hover {
     transform: translate(0);
 }
 
+/* Phone screen / Tablet */
 @media (max-width: 800px) {
     body {
         overflow: unset;
@@ -410,14 +487,12 @@ button.check-out:hover {
         display: flex;
     }
 
-    ul {
+    .nav-lists {
         display: none;
     }
 
     .menu {
-        margin-right: 20px;
-        display: block;
-        border: none;
+       display: none;
     }
 
     .avater-image {
@@ -431,6 +506,31 @@ button.check-out:hover {
         margin: unset;
     }
 
+    .cart-item {
+        top: 90px;
+        width: 90%;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        box-shadow: none;
+    }
+
+    .menu {
+        margin-right: 20px;
+        display: block;
+        border: none;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .prices {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
     main {
         grid-template-columns: 1fr;
         margin: 0 0 20px;
@@ -441,6 +541,10 @@ button.check-out:hover {
     nav {
         border: none;
         margin: 1em 20px 0;
+    }
+
+    ul li {
+        padding: 10px 0;
     }
 
     .product-image {
@@ -501,6 +605,7 @@ button.check-out:hover {
     }
 
     .menu-overlay ul {
+        margin-top: 40px;
         display: flex;
         flex-direction: column;
     }

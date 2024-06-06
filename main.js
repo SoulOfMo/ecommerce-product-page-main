@@ -39,3 +39,48 @@ console.log(mainImg);
 //     itemCount.textContent = count;
 //   }
 // });
+
+// Cart
+const cart = document.querySelector(".cart-icon");
+const cartContain = document.querySelector(".cart-item");
+const menuOverlay = document.querySelector(".menu-overlay");
+const menuBtn = document.querySelector(".menu");
+const closeBtn = document.querySelector(".close-btn");
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
+const productImg = document.querySelector(".main-image");
+let count = 1;
+console.log(productImg);
+
+cart.addEventListener("click", function () {
+  cartContain.classList.toggle("hidden");
+});
+
+menuBtn.addEventListener("click", function () {
+  menuOverlay.classList.add("show");
+});
+
+closeBtn.addEventListener("click", function () {
+  menuOverlay.classList.remove("show");
+});
+
+nextBtn.addEventListener("click", function () {
+  if (count == 4) {
+    count = 1;
+  } else {
+    count++;
+  }
+
+  productImg.setAttribute("src", `./images/image-product-${count}.jpg`);
+});
+
+prevBtn.addEventListener("click", function () {
+  if (count == 1) {
+    count = 4;
+  } else {
+    count--;
+  }
+
+  productImg.setAttribute("src", `./images/image-product-${count}.jpg`);
+});
+
