@@ -173,7 +173,7 @@ li:active {
     z-index: 100;
 }
 
-.items {
+.cart-details {
     padding: 20px 20px;
 }
 
@@ -198,7 +198,7 @@ li:active {
     justify-content: space-between;
 }
 
-.empty {
+.cart-msg {
     display: block;
     text-align: center;
     padding: 50px 0;
@@ -225,7 +225,7 @@ li:active {
     letter-spacing: 0.7px;
 }
 
-.item-count {
+.cart-number {
     position: absolute;
     width: 15px;
     height: 15px;
@@ -458,7 +458,6 @@ button.check-out:hover {
     transform: translateY(-100%);
     transition: transform ease-in-out 1s;
 }
-
 
 .menu-overlay .nav-lists li {
     color: var(--Black);
