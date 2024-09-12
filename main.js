@@ -1,7 +1,7 @@
 //Decelaring items
 const cart = document.querySelector(".cart-icon");
 const cartContain = document.querySelector(".cart-item");
-const addToCartBtn = document.querySelector('.add-to-cart');
+const addToCartBtn = document.querySelector(".add-to-cart");
 const menuOverlay = document.querySelector(".menu-overlay");
 const menuBtn = document.querySelector(".menu");
 const closeBtn = document.querySelector(".close-btn");
@@ -14,6 +14,7 @@ const itemNumber = document.querySelector(".count");
 const cartNumber = document.querySelector(".cart-number");
 const nosOfItem = document.querySelector(".nos-of-item");
 const total = document.querySelector(".total");
+const clearCart = document.querySelector(".bin");
 const cartDetails = document.querySelector(".cart-details");
 const cartMsg = document.querySelector(".cart-msg");
 const productImgContainer = document.querySelector(".product-image");
@@ -27,23 +28,17 @@ const overlayNextBtn = overlayContainer.querySelector(".next");
 const overlayMainImg = overlayContainer.querySelector(".product-image img");
 const overlayThumbnails = overlayContainer.querySelectorAll(".img-container");
 
-console.log(overlayMainImg);
 let count = 1;
 let number = 0;
 
 // Toggle Function
-cart.addEventListener("click", function () {
-  cartContain.classList.toggle("hidden");
-});
+cart.addEventListener("click", () => cartContain.classList.toggle("hidden"));
 
-menuBtn.addEventListener("click", function () {
-  menuOverlay.classList.add("show");
-});
+menuBtn.addEventListener("click", () => menuOverlay.classList.add("show"));
 
-closeBtn.addEventListener("click", function () {
-  menuOverlay.classList.remove("show");
-});
+closeBtn.addEventListener("click", () => menuOverlay.classList.remove("show"));
 
+// Next and Prev Button
 function next(a) {
   if (count == 4) {
     count = 1;
@@ -51,6 +46,10 @@ function next(a) {
     count++;
   }
   a.setAttribute("src", `./images/image-product-${count}.jpg`);
+  overlayThumbnails.forEach(function (el, id) {
+    el.classList.remove("active");
+    if (id === count - 1) el.classList.add("active");
+  });
 }
 
 function prev(path) {
@@ -60,26 +59,18 @@ function prev(path) {
     count--;
   }
   path.setAttribute("src", `./images/image-product-${count}.jpg`);
+  overlayThumbnails.forEach(function (el, id) {
+    el.classList.remove("active");
+    if (id === count - 1) el.classList.add("active");
+  });
 }
 
 nextBtn.addEventListener("click", function () {
-  if (count == 4) {
-    count = 1;
-  } else {
-    count++;
-  }
-
-  productImg.setAttribute("src", `./images/image-product-${count}.jpg`);
+  next(productImg);
 });
 
 prevBtn.addEventListener("click", function () {
-  if (count == 1) {
-    count = 4;
-  } else {
-    count--;
-  }
-
-  productImg.setAttribute("src", `./images/image-product-${count}.jpg`);
+  prev(productImg);
 });
 
 overlayPrevBtn.addEventListener("click", function () {
@@ -95,22 +86,21 @@ overlayNextBtn.addEventListener("click", function () {
 increaseBtn.addEventListener("click", function () {
   number++;
   itemNumber.textContent = number;
-  addToCartBtn.addEventListener('click', function(){
+  addToCartBtn.addEventListener("click", function () {
     if (number > 0) {
       cartNumber.classList.remove("hidden");
       cartNumber.textContent = number;
       nosOfItem.textContent = number;
       let price = 125;
       price *= number;
-      total.textContent = ` $${price}`;
+      total.textContent = ` $${price}.00`;
       cartMsg.classList.add("hidden");
       cartDetails.classList.remove("hidden");
     } else {
       cartMsg.classList.remove("hidden");
       cartDetails.classList.add("hidden");
     }
-  })
-  
+  });
 });
 
 decreaseBtn.addEventListener("click", function () {
@@ -122,7 +112,7 @@ decreaseBtn.addEventListener("click", function () {
     let price = 125;
     console.log(number, price);
     price *= number;
-    total.textContent = ` $${price}`;
+    total.textContent = ` $${price}.00`;
   }
   if (number == 0) {
     cartNumber.classList.add("hidden");
@@ -130,12 +120,22 @@ decreaseBtn.addEventListener("click", function () {
     cartDetails.classList.add("hidden");
   }
 });
+
+/// Clearing cart
+clearCart.addEventListener("click", function () {
+  number = 0;
+  itemNumber.textContent = number;
+  cartNumber.classList.add("hidden");
+  cartMsg.classList.remove("hidden");
+  cartDetails.classList.add("hidden");
+  cartNumber.textContent = number;
+  nosOfItem.textContent = number;
+});
+
 // I used dataset to get the number of the image
 thumblineImg.forEach(function (el) {
   el.addEventListener("click", function () {
-    thumblineImg.forEach(function (item) {
-      item.classList.remove("active");
-    });
+    thumblineImg.forEach((item) => item.classList.remove("active"));
     this.classList.add("active");
     let currentImage = this.querySelector("img").dataset.number;
     productImg.setAttribute(
@@ -148,9 +148,7 @@ thumblineImg.forEach(function (el) {
 // I used index property of an array
 overlayThumbnails.forEach(function (el, id) {
   el.addEventListener("click", function () {
-    overlayThumbnails.forEach(function (item) {
-      item.classList.remove("active");
-    });
+    overlayThumbnails.forEach((item) => item.classList.remove("active"));
     this.classList.add("active");
     console.log(id);
     let currentImage = this.querySelector("img");

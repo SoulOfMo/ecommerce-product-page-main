@@ -51,6 +51,7 @@ ul {
     list-style: none;
 }
 
+/* variables */
 :root {
     --Very-dark-blue: hsl(220, 13%, 13%);
     --Dark-grayish-blue: hsl(219, 9%, 45%);
@@ -163,9 +164,9 @@ li:active {
     right: -50px;
     top: 60px;
     height: max-content;
-    width: 25%;
+    width: 300px;
     background-color: white;
-    box-shadow: 0px 9px 16px 3px var(--Grayish-blue);
+    box-shadow: -2px 16px 16px 3px var(--Grayish-blue);
     border-radius: 10px;
     font-size: 1.3rem;
     text-transform: capitalize;
@@ -185,17 +186,24 @@ li:active {
 }
 
 .cart-item img {
-    width: 10%;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
     border-radius: 5px;
 }
 
 .cart-item .bin {
-    width: 10px;
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    object-fit: contain;
 }
 
 .item {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 8px;
 }
 
 .cart-msg {
@@ -203,7 +211,7 @@ li:active {
     text-align: center;
     padding: 50px 0;
     font-weight: 700;
-    text-transform: unset;
+    text-transform: none;
 }
 
 .total {
@@ -248,11 +256,14 @@ li:active {
 .avater-image:hover {
     outline: 2px solid var(--Orange);
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .avater-image img {
     width: 60px;
 }
+
+/* MAIN CONTENT */
 
 main {
     margin: 4em auto 0;
