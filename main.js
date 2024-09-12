@@ -65,21 +65,13 @@ function prev(path) {
   });
 }
 
-nextBtn.addEventListener("click", function () {
-  next(productImg);
-});
+nextBtn.addEventListener("click", () => next(productImg));
 
-prevBtn.addEventListener("click", function () {
-  prev(productImg);
-});
+prevBtn.addEventListener("click", () => prev(productImg));
 
-overlayPrevBtn.addEventListener("click", function () {
-  next(overlayMainImg);
-});
+overlayPrevBtn.addEventListener("click", () => next(overlayMainImg));
 
-overlayNextBtn.addEventListener("click", function () {
-  prev(overlayMainImg);
-});
+overlayNextBtn.addEventListener("click", () => prev(overlayMainImg));
 
 // Number of Item Added to cart
 
@@ -110,7 +102,6 @@ decreaseBtn.addEventListener("click", function () {
     cartNumber.textContent = number;
     nosOfItem.textContent = number;
     let price = 125;
-    console.log(number, price);
     price *= number;
     total.textContent = ` $${price}.00`;
   }
@@ -150,7 +141,6 @@ overlayThumbnails.forEach(function (el, id) {
   el.addEventListener("click", function () {
     overlayThumbnails.forEach((item) => item.classList.remove("active"));
     this.classList.add("active");
-    console.log(id);
     let currentImage = this.querySelector("img");
     overlayMainImg.setAttribute("src", `./images/image-product-${id + 1}.jpg`);
   });

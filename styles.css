@@ -370,8 +370,8 @@ h2 {
 }
 
 .discount {
-    color: var(--Orange);
-    background-color: hsla(26, 84%, 52%, 0.324);
+    color: var(--White);
+    background-color: var(--Black);
     width: 40px;
     text-align: center;
     font-size: 0.8em;
@@ -567,6 +567,11 @@ button.add-to-cart:hover {
 
     .avater-image {
         margin: unset;
+    }
+
+    .item {
+        gap: 16px;
+        justify-content: unset;
     }
 }
 
