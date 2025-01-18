@@ -150,10 +150,24 @@ productImgContainer.addEventListener("click", function () {
   if (window.innerWidth > 768) {
     overlayContainer.classList.remove("hidden");
   } else {
-    overlayContainer.classList.add("hidden");
+    // overlayContainer.classList.add("hidden");
+    removeOverlay;
   }
 });
 
-overlayClsBtn.addEventListener("click", function () {
+const removeOverlay = function () {
   overlayContainer.classList.add("hidden");
-});
+};
+
+// overlayContainer.addEventListener("click", () => {
+//   if (!overlayContainer.classList.contains("hidden")) {
+//     removeOverlay();
+//   }
+// });
+
+window.addEventListener(
+  "keydown",
+  (e) => e.key === "Escape" && removeOverlay()
+);
+
+overlayClsBtn.addEventListener("click", removeOverlay);

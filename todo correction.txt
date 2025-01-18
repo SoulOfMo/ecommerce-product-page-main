@@ -1,0 +1,12 @@
+1. Change nav list text color - more dark, black ```
+2. chnage the text color and icon of the addcart button.
+3. discount text color
+4. Add discernible text to all button(use aria-label)
+5. add a h1 element```
+6. the ul, li item should have a role attritube(navigation)
+7. readjust the @soulofmo footer element ```
+
+///
+Work on the button size, (+,-,add cart, 50%) ```
+Section lacks heading. Consider using "h2"-"h6" elements to add identifying headings to all sections.
+in>  <section id="product-images">

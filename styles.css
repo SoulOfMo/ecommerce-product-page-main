@@ -409,9 +409,14 @@ h1 {
 }
 
 .numbers button {
+    height: 100%;
+    width: 40px;
+    display: grid;
+    place-content: center;
     border: none;
     background: none;
 }
+
 
 .numbers button:hover {
     cursor: pointer;
